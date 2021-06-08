@@ -1,5 +1,5 @@
 import getName from './functions';
-import { copyAndPush, capitalizeAndFilter } from './functions';
+import { copyAndPush, capitalizeAndFilter, fetchQuotes } from './functions';
 
 describe('getName', () => {
   it('returns name property of an object', () => {
@@ -22,5 +22,17 @@ describe('capatalizeFilter', () => {
     const sampleString = ['Frankie says relax', 'xanadou', 'forget about it'];
     const noFStrings = capitalizeAndFilter(sampleString);
     expect(noFStrings).toEqual(['XANADOU']);
+  });
+});
+
+describe('fetchQuotes', () => {
+  it('return a quote from the Futurama API', async () => {
+    const quote = await fetchQuotes();
+    console.log(quote);
+    expect(quote).toEqual({
+      name: 'Bender',
+      text: 'Bite my shiny metal ass.',
+      image: 'https://res.cloudinary.com/dzxqhkyqd/image/fetch/c_scale,w_500/https://res.cloudinary.com/dzxqhkyqd/image/upload/v1552429540/bender.png'
+    });
   });
 });
