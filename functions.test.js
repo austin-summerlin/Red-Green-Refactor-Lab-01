@@ -28,7 +28,6 @@ describe('capatalizeFilter', () => {
 describe('fetchQuotes', () => {
   it('return a quote from the Futurama API', async () => {
     const quote = await fetchQuotes();
-    console.log(quote);
     expect(quote).toEqual({
       name: 'Bender',
       text: 'Bite my shiny metal ass.',
