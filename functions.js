@@ -3,7 +3,8 @@ export default ({ name }) => {
 };
 
 export function copyAndPush(arr, x) {
-  arr.push(x);
-  return arr;
+  const copyArr = arr;
+  copyArr.push(x);
+  return [arr, copyArr];
 }
 
