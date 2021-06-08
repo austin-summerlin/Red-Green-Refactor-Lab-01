@@ -1,7 +1,6 @@
-export default function getName(obj) {
-  const { name } = obj;
+export default ({ name }) => {
   return name;
-}
+};
 
 
 
